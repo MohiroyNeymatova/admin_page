@@ -1,0 +1,42 @@
+from django.urls import path, include
+from .views import *
+
+
+urlpatterns = [
+    path('', index, name='index'),
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
+    path('settings/', settings, name='settings'),
+    path('info/', info_view, name='info'),
+    path('create_info/', create_info, name='create_info'),
+    path('update_info/<int:pk>/', update_info, name='update_info'),
+    path('delete_info/<int:pk>/', delete_info, name='delete_info'),
+    path('main_banner/', main_banner_view, name='main_banner'),
+    path('create_main_banner/', create_main_banner, name='create_main_banner'),
+    path('update_main_banner/<int:pk>/', update_main_banner, name='update_main_banner'),
+    path('delete_main_banner/<int:pk>/', delete_main_banner, name='delete_main_banner'),
+    path('services/', services_view, name='services'),
+    path('create_service/', create_service, name='create_service'),
+    path('update_service/<int:pk>/', update_service, name='update_service'),
+    path('delete_service/<int:pk>/', delete_service, name='delete_service'),
+    path('about/', about_view, name='about'),
+    path('create_about/', create_about, name='create_about'),
+    path('update_about/<int:pk>/', update_about, name='update_about'),
+    path('delete_about/<int:pk>/', delete_about, name='delete_about'),
+    path('portfolio/', portfolio_view, name='portfolio'),
+    path('create_portfolio/', create_portfolio, name='create_portfolio'),
+    path('update_portfolio/<int:pk>/', update_portfolio, name='update_portfolio'),
+    path('delete_portfolio/<int:pk>/', delete_portfolio, name='delete_portfolio'),
+    path('testimonials/', testimonials_view, name='testimonials'),
+    path('create_testimonial/', create_testimonial, name='create_testimonial'),
+    path('update_testimonial/<int:pk>/', update_testimonial, name='update_testimonial'),
+    path('delete_testimonial/<int:pk>/', delete_testimonial, name='delete_testimonial'),
+    path('clients/', clients_view, name='clients'),
+    path('create_client/', create_client, name='create_client'),
+    path('update_client/<int:pk>/', update_client, name='update_client'),
+    path('delete_client/<int:pk>/', delete_client, name='delete_client'),
+    path('messages/', messages_view, name='messages'),
+    path('message_details/<int:pk>/', message_details, name='message_details'),
+    path('delete_message/<int:pk>/', delete_message, name='delete_message'),
+]
+

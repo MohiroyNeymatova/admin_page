@@ -1,0 +1,42 @@
+{% extends 'backoffice/base.html' %}
+{% block content %}
+<div class="container">
+     <div class="row">
+         <div class="col">
+             <div class="page-description">
+                 <h1>Update Main Banner</h1>
+             </div>
+         </div>
+     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="example-container">
+                        <div class="example-content">
+                            <form class="row g-3" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="col-md-12">
+                                    <label for="image" class="form-label">Image (Default- <a href="{{main_banner.image.url}}">{{main_banner.image.url}}</a></label>
+                                    <input type="file" class="form-control" name="image">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="title" class="form-label">Title</label>
+                                    <input type="text" class="form-control" name="title" value="{{main_banner.title}}">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="text" class="form-label">Text</label>
+                                    <input type="text" class="form-control" name="text" value="{{main_banner.text}}">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

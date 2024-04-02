@@ -1,0 +1,114 @@
+{% extends 'backoffice/base.html' %}
+{% block content %}
+<div class="container">
+     <div class="row">
+        <div class="col">
+            <div class="page-description d-flex align-items-center">
+                <div class="page-description-content flex-grow-1">
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="page-description-actions">
+                    <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card widget widget-list">
+        <div class="card-header">
+            <h5 class="card-title">Quantity of all existing objects</h5>
+        </div>
+        <div class="card-body">
+            <ul class="widget-list-content list-unstyled">
+                <li class="widget-list-item widget-list-item-green">
+                    <img src="/media/icons_for_website/information.png">
+                    <span class="widget-list-item-description">
+                        <a href="{% url 'info' %}" class="widget-list-item-description-title">
+                            Info
+                        </a>
+                        <span class="widget-list-item-description-subtitle">
+                            {{infos}}
+                        </span>
+                    </span>
+                </li>
+                <li class="widget-list-item widget-list-item-green">
+                    <img src="/media/icons_for_website/folded-ribbon.png">
+                    <span class="widget-list-item-description">
+                        <a href="{% url 'main_banner' %}" class="widget-list-item-description-title">
+                            Main Banner
+                        </a>
+                        <span class="widget-list-item-description-subtitle">
+                            {{banners}}
+                        </span>
+                    </span>
+                </li>
+                <li class="widget-list-item widget-list-item-green">
+                    <img src="/media/icons_for_website/briefcase.png">
+                    <span class="widget-list-item-description">
+                        <a href="{% url 'portfolio' %}" class="widget-list-item-description-title">
+                            Portfolio
+                        </a>
+                        <span class="widget-list-item-description-subtitle">
+                            {{portfolio}}
+                        </span>
+                    </span>
+                </li>
+                <li class="widget-list-item widget-list-item-green">
+                    <img src="/media/icons_for_website/customer-review.png">
+                    <span class="widget-list-item-description">
+                        <a href="{% url 'testimonials' %}" class="widget-list-item-description-title">
+                            Testimonial
+                        </a>
+                        <span class="widget-list-item-description-subtitle">
+                            {{reviews}}
+                        </span>
+                    </span>
+                </li>
+                <li class="widget-list-item widget-list-item-green">
+                    <img src="/media/icons_for_website/customer-service.png">
+                    <span class="widget-list-item-description">
+                        <a href="{% url 'services' %}" class="widget-list-item-description-title">
+                            Service
+                        </a>
+                        <span class="widget-list-item-description-subtitle">
+                            {{services}}
+                        </span>
+                    </span>
+                </li>
+                <li class="widget-list-item widget-list-item-green">
+                    <img src="/media/icons_for_website/message.png">
+                    <span class="widget-list-item-description">
+                        <a href="{% url 'messages' %}" class="widget-list-item-description-title">
+                            Message
+                        </a>
+                        <span class="widget-list-item-description-subtitle">
+                            {{messages}}
+                        </span>
+                    </span>
+                </li>
+                <li class="widget-list-item widget-list-item-green">
+                    <img src="/media/icons_for_website/name-tag.png">
+                    <span class="widget-list-item-description">
+                        <a href="{% url 'about' %}" class="widget-list-item-description-title">
+                            About
+                        </a>
+                        <span class="widget-list-item-description-subtitle">
+                            {{abouts}}
+                        </span>
+                    </span>
+                </li>
+                <li class="widget-list-item widget-list-item-green">
+                    <img src="/media/icons_for_website/star.png">
+                    <span class="widget-list-item-description">
+                        <a href="{% url 'clients' %}" class="widget-list-item-description-title">
+                            Clients
+                        </a>
+                        <span class="widget-list-item-description-subtitle">
+                            {{clients}}
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

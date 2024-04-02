@@ -1,0 +1,38 @@
+{% extends 'backoffice/base.html' %}
+{% block content %}
+<div class="row">
+         <div class="col">
+             <div class="page-description">
+                 <h1>Message Details</h1>
+             </div>
+         </div>
+     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="example-container">
+                        <div class="example-content">
+                            <table class="table">
+                                <thead class="table-dark">
+                                <tr>
+                                    <th width="70%" class="text-center">Message</th>
+                                    <th width="5%" class="text-center">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-center">{{message.message}}</td>
+                                    <td class="text-center">
+                                        <a href="{% url 'delete_message' message.id %}" class="btn btn-danger"><span class="material-symbols-outlined">delete</span></a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

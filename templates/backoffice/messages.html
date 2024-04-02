@@ -1,0 +1,54 @@
+{% extends 'backoffice/base.html' %}
+{% block content %}
+<div class="row">
+         <div class="col">
+             <div class="page-description">
+                 <h1>Messages</h1>
+             </div>
+         </div>
+     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">All Messages you have received</h5>
+                </div>
+                <div class="card-body">
+                    <div class="example-container">
+                        <div class="example-content">
+                            <table class="table">
+                                <thead class="table-dark">
+                                <tr>
+                                    <th width="5%" class="text-center">#</th>
+                                    <th width="5%" class="text-center">First Name</th>
+                                    <th width="5%" class="text-center">Last Name</th>
+                                    <th width="5%" class="text-center">Email</th>
+                                    <th width="5%" class="text-center">Subject</th>
+                                    <th width="5%" class="text-center">Message</th>
+                                    <th width="22%" class="text-center">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for i in messages %}
+                                <tr>
+                                    <th scope="row">{{forloop.counter}}</th>
+                                    <td class="text-center">{{i.first_name}}</td>
+                                    <td class="text-center">{{i.last_name}}</td>
+                                    <td class="text-center">{{i.email}}</td>
+                                    <td class="text-center">{{i.subject}}</td>
+                                    <td class="text-center">{{i.message|truncatechars:20}}</td>
+                                    <td class="text-center">
+                                        <a href="{% url 'delete_message' i.id %}" class="btn btn-danger"><span class="material-symbols-outlined">delete</span></a>
+                                        <a href="{% url 'message_details' i.id %}" class="btn btn-danger"><span class="material-symbols-outlined">details</span></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
